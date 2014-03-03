@@ -26,10 +26,6 @@
 # SOFTWARE.
 #
 
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions
-
 from tvd.series.plugin import SeriesPlugin
 from tvd.common.graph import T
 
@@ -41,3 +37,10 @@ class SeriesName(SeriesPlugin):
 
     def secondResource(self, url=None, episode=None):
         pass
+
+# --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
+# --- UNLESS YOU KNOW WHAT YOU ARE DOING :-) ---
+
+from ._version import get_versions
+__version__ = get_versions()['version']
+del get_versions

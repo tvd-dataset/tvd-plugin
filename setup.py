@@ -54,8 +54,11 @@ versioneer.versionfile_build = '{name}/_version.py'.format(name=SERIES_NAME)
 versioneer.tag_prefix = ''
 versioneer.parentdir_prefix = '{name}-'.format(name=SERIES_NAME)
 
-from ez_setup import use_setuptools
-use_setuptools()
+try:
+    from ez_setup import use_setuptools
+    use_setuptools()
+except:
+    pass
 
 from setuptools import setup, find_packages
 
