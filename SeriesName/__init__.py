@@ -30,12 +30,38 @@ from tvd.series.plugin import SeriesPlugin
 from tvd.common.graph import T
 
 
+# RENAME SeriesName TO THE NAME YOU DEFINED IN SETUP.PY
+# The class will automatically inherit from all SeriesPlugin methods.
+
 class SeriesName(SeriesPlugin):
 
-    def firstResource(self, url=None, episode=None):
+    # ADD ONE METHOD PER RESOURCE DEFINED IN TVD.YML
+
+    # These methods are called in SeriesPlugin.get_resource()
+    # with parameters `episode` and `content`:
+    #    - `episode` (Episode) is the currently processed episode
+    #    - `content` (str) contains the downloaded content
+    #      from the URL provided in tvd.yml. It is pre-downloaded for you.
+
+    # They should return the resource for the given episode
+    # as an annotation graph (tvd.AnnotationGraph)
+    def firstResource(self, content=None, episode=None):
+        """Download `episode` `firstResource` from `url`
+
+        Parameters
+        ----------
+        content : str
+            Downloaded content from the URL provided in file tvd.yml.
+        episode : `tvd.Episode`
+            Episode
+
+        Returns
+        -------
+        graph : `tvd.AnnotationGraph`
+        """
         pass
 
-    def secondResource(self, url=None, episode=None):
+    def secondResource(self, content=None, episode=None):
         pass
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
