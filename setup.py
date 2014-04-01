@@ -40,7 +40,7 @@ AUTHOR_NAME = 'John Doe'
 AUTHOR_EMAIL = 'john@doe.com'
 
 # TVD compatibility version
-REQUIRES_TVD = 'tvd>=0.1.2'
+REQUIRES_TVD = 'tvd>=0.2.1'
 
 # Additional package dependency
 REQUIRES_OTHER = []
