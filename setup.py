@@ -43,6 +43,7 @@ AUTHOR_EMAIL = 'john@doe.com'
 REQUIRES_TVD = 'tvd>=0.2.1'
 
 # Additional package dependency
+# e.g. ['beautifulsoup4>=4.3.2', 'requests>2.2.1']
 REQUIRES_OTHER = []
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---

@@ -28,7 +28,7 @@
 #      "The Big Bang Theory" for TheBigBangTheory plugin
 name: "Human-Readable TV Series Name"
 
-# TV series original language 
+# TV series original language
 # e.g. "en" for English
 #      "fr" for French
 #      "es" for Spanish
@@ -58,7 +58,7 @@ www:
             - {season: 1, episode: 1, url: "http://www.wikipedia.org/season1/episode1/index.html"}
             - {season: 1, episode: 2, url: "http://www.wikipedia.org/season1/episode1/index.html"}
             - {season: 1, episode: 3, url: "http://www.wikipedia.org/season1/episode1/index.html"}
-    
+
     # same for second type of resource, then third of resource, etc...
     secondResource:
 

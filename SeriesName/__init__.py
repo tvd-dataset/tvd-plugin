@@ -36,12 +36,13 @@ class SeriesName(Plugin):
     # ADD ONE METHOD PER RESOURCE DEFINED IN TVD.YML
 
     # These methods are called in Plugin.get_resource()
-    # with parameters `episode` and `url`:
+    # with parameters `episode` and `content`:
     #    - `episode` (Episode) is the currently processed episode
-    #    - `url` (str) provided in tvd.yml. 
+    #    - `url` (str) contains the URL provided in tvd.yml.
 
     # They should return the resource for the given episode
     # as an annotation graph (tvd.AnnotationGraph)
+    
     def firstResource(self, url=None, episode=None, **kwargs):
         """Download `episode` `firstResource` from `url`
 
@@ -52,13 +53,20 @@ class SeriesName(Plugin):
         episode : `tvd.Episode`, optional
             Episode for which resource should be downloaded.
             Useful in case a same URL contains resources for multiple episodes.
+
         Returns
         -------
         graph : `tvd.AnnotationGraph`
         """
-        pass
 
-    def secondResource(self, content=None, episode=None):
+        # start with an empty annotation graph
+        annotation_graph = AnnotationGraph()
+
+        # do what needs to be done...
+
+        return annotation_graph
+
+    def secondResource(self, url=None, episode=None, **kwargs):
         pass
 
 # --- DO NOT MODIFY ANYTHING AFTER THIS LINE ---
