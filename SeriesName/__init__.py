@@ -4,8 +4,7 @@
 #
 # The MIT License (MIT)
 #
-# Copyright (c) 2013-2014 CNRS (http://www.cnrs.fr)
-# Copyright (c) 2013-2014 Hervé BREDIN (http://herve.niderb.fr/)
+# Copyright (c) 2013-2014 CNRS (Hervé BREDIN - http://herve.niderb.fr/)
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,35 +25,33 @@
 # SOFTWARE.
 #
 
-from tvd.series.plugin import SeriesPlugin
-from tvd.common.graph import T
-
+from tvd import Plugin
+from tvd import TFloating, TStart, TEnd, AnnotationGraph
 
 # RENAME SeriesName TO THE NAME YOU DEFINED IN SETUP.PY
-# The class will automatically inherit from all SeriesPlugin methods.
+# The class will automatically inherit of all Plugin methods.
 
-class SeriesName(SeriesPlugin):
+class SeriesName(Plugin):
 
     # ADD ONE METHOD PER RESOURCE DEFINED IN TVD.YML
 
-    # These methods are called in SeriesPlugin.get_resource()
-    # with parameters `episode` and `content`:
+    # These methods are called in Plugin.get_resource()
+    # with parameters `episode` and `url`:
     #    - `episode` (Episode) is the currently processed episode
-    #    - `content` (str) contains the downloaded content
-    #      from the URL provided in tvd.yml. It is pre-downloaded for you.
+    #    - `url` (str) provided in tvd.yml. 
 
     # They should return the resource for the given episode
     # as an annotation graph (tvd.AnnotationGraph)
-    def firstResource(self, content=None, episode=None):
+    def firstResource(self, url=None, episode=None, **kwargs):
         """Download `episode` `firstResource` from `url`
 
         Parameters
         ----------
-        content : str
-            Downloaded content from the URL provided in file tvd.yml.
-        episode : `tvd.Episode`
-            Episode
-
+        url : str, optional
+            URL provided in file tvd.yml.
+        episode : `tvd.Episode`, optional
+            Episode for which resource should be downloaded.
+            Useful in case a same URL contains resources for multiple episodes.
         Returns
         -------
         graph : `tvd.AnnotationGraph`
