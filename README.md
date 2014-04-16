@@ -33,15 +33,6 @@ Thanks to its plugin architecture, TVD can easily be extended to new TV series.
    `$ python -m tvd.create /tmp/ ${SERIES_NAME}`
 5. Check that everything was downloaded correctly in `/tmp/${SERIES_NAME}`
 
-## How to publish your TVD plugin ##
-
-1. Register your plugin with [PyPi](pypi.python.org):  
-   `$ python setup.py register`
-2. Upload your plugin:  
-   `$ python setup.py sdist upload`
-
-It is now available for anyone to `pip install TVD${SERIES_NAME}` :-)
-
 ## How to update your TVD plugin ##
 
 1. Apply your changes.  
@@ -49,5 +40,5 @@ It is now available for anyone to `pip install TVD${SERIES_NAME}` :-)
    `$ git commit -a -m"Initial commit`
 3. ... and update [version tag](http://semver.org/):  
    `git tag -a 0.2`
-4. Upload your plugin:  
-   `$ python setup.py sdist upload`
+4. Push everything to Github.  
+   `$ git push --all --tags`
