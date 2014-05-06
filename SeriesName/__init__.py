@@ -25,8 +25,7 @@
 # SOFTWARE.
 #
 
-from tvd import Plugin
-from tvd import TFloating, TStart, TEnd, AnnotationGraph
+from tvd import Plugin, T, TStart, TEnd, Transcription
 
 # RENAME SeriesName TO THE NAME YOU DEFINED IN SETUP.PY
 # The class will automatically inherit of all Plugin methods.
@@ -56,11 +55,11 @@ class SeriesName(Plugin):
 
         Returns
         -------
-        graph : `tvd.AnnotationGraph`
+        graph : `tvd.Transcription`
         """
 
         # start with an empty annotation graph
-        annotation_graph = AnnotationGraph()
+        annotation_graph = Transcription(episode=episode)
 
         # do what needs to be done...
 

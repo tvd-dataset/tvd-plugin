@@ -46,11 +46,18 @@ www:
     # e.g. summary: or outline: or script
     firstResource:
 
-	# source for the first resource
-        # this can be any kind of text (but do not make it too long)
-	source: "The Best Fan Website Ever (http://www.wikipedia.org)"
+        description: >
+            Textual description of first resource.
 
-	# this section should provide on URL per episode
+        # source for the first resource
+        # this can be any kind of text (but do not make it too long)
+        source: |
+            @misc{wikipedia, 
+                title = {{The Best Fan Website Ever}},
+                howpublished = \url{http://www.wikipedia.org},
+            }
+
+        # this section should provide on URL per episode
         # from which the resource can be downloaded
         # in case, the resource is not available for a given episode,
         # just remove the corresponding line from the list
@@ -62,7 +69,15 @@ www:
     # same for second type of resource, then third of resource, etc...
     secondResource:
 
-        source: "Some Crappy Teen Website (http://series-name.ftw.org)"
+        description: >
+            Textual description of second resource.
+
+        source: |
+            @misc{wikipedia, 
+                title = {{Some Crappy Teen Website}},
+                howpublished = \url{http://series-name.ftw.org},
+            }
+
         url:
             - {season: 1, episode: 5, url: "http://series-name.ftw.org/love-episode5.htm"}
 
